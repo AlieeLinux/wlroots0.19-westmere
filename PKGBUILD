@@ -21,7 +21,7 @@ build() {
         tar -xvf "wlroots-0.19.0.tar.gz" -C "$srcdir"
         cd "$srcdir/wlroots-0.19.0"
         mkdir build
-        arch-meson build --prefix=/usr -Dc_args="$CFLAGS" -Dcpp_args="$CFLAGS" 
+        arch-meson build --prefix=/usr -Dc_args="$CFLAGS" -Dcpp_args="$CFLAGS" -Dxwayland=disabled
         ninja -C build -j $(nproc)
 }
 package() {
