@@ -1,7 +1,7 @@
 # Maintainer: Joe User <joe.user@example.com>
 pkgname=wlroots0.19-westmere
 pkgver=0.19
-pkgrel=1
+pkgrel=2
 pkgdesc="wlroots with westmere patches"
 arch=('x86_64')
 url="https://swaywm.org/"
@@ -21,7 +21,7 @@ build() {
         tar -xvf "wlroots-0.19.0.tar.gz" -C "$srcdir"
         cd "$srcdir/wlroots-0.19.0"
         mkdir build
-        arch-meson build --prefix=/usr -Dc_args="$CFLAGS" -Dcpp_args="$CFLAGS" -Dxwayland=disabled
+        arch-meson build --prefix=/usr -Dc_args="$CFLAGS" -Dcpp_args="$CFLAGS" 
         ninja -C build -j $(nproc)
 }
 package() {
